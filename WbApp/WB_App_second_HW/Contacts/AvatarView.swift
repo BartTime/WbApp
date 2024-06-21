@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AvatarView: View {
-    let contact: Contact
+    let contact: Contacts
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
@@ -28,6 +28,6 @@ private struct ConstantsSize {
     static let avatarCornerRadius: CGFloat = 16
 }
 
-#Preview {
-    AvatarView(contact: Contact(avatar: "", initials: "", name: "", isOnline: true, hasStory: true, lastSeen: "", phoneNumber: "123"))
-}
+//#Preview {
+//    AvatarView(contact: Contact(avatar: "", initials: "", name: "", isOnline: true, hasStory: true, lastSeen: "", phoneNumber: "123"))
+//}
