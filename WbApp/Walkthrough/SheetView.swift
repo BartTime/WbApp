@@ -9,7 +9,7 @@ struct SheetView: View {
                 .font(.title)
                 .padding()
             
-            ButtonView(buttonAction: closeSheet, buttonText: ConstantsName.backButtonText)
+            ButtonView(buttonAction: closeSheet, buttonText: ConstantsName.backButtonText, isDisabled: false)
         }
         .padding()
     }
