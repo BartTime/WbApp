@@ -1,0 +1,6 @@
+"EnterPhoneNumber" = "Введите номер телефона";
+"CodeVerificationNumber" = "Мы вышлем код подтверждения на указанный номер";
+"Continue" = "Продолжить";
+"BaseError" = "Ошибка";
+"Ok" = "Ок";
+"NumberOfPhoneNotConfirm" = "Номер телефона не соответствует формату для";

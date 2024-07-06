@@ -17,7 +17,7 @@ struct WalkthroughView: View {
             userAgreementButton
                 .padding(.bottom, ConstantsSize.userAgreementButtonBottomPadding)
             
-            ButtonView(buttonAction: showSheet, buttonText: ConstantsName.startChattingButtonText)
+            ButtonView(buttonAction: showSheet, buttonText: ConstantsName.startChattingButtonText, isDisabled: false)
                 .padding(.bottom, ConstantsSize.startChattingButtonBottomPadding)
         }
         .padding(.horizontal, ConstantsSize.horizontalPadding)
