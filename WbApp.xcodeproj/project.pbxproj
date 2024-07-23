@@ -14,6 +14,20 @@
 		FA0C35542C11F1A1005C4482 /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C35532C11F1A1005C4482 /* WalkthroughView.swift */; };
 		FA0C35562C11F1E4005C4482 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C35552C11F1E4005C4482 /* SheetView.swift */; };
 		FA0C35592C11F235005C4482 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0C35582C11F235005C4482 /* ButtonView.swift */; };
+		FA34F0BF2C1B28A800C4EEB2 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AB2C1B28A800C4EEB2 /* AvatarView.swift */; };
+		FA34F0C02C1B28A800C4EEB2 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AC2C1B28A800C4EEB2 /* ContactListView.swift */; };
+		FA34F0C12C1B28A800C4EEB2 /* ContactRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AD2C1B28A800C4EEB2 /* ContactRowView.swift */; };
+		FA34F0C22C1B28A800C4EEB2 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AE2C1B28A800C4EEB2 /* ContactsView.swift */; };
+		FA34F0C32C1B28A800C4EEB2 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AF2C1B28A800C4EEB2 /* InitialsView.swift */; };
+		FA34F0C42C1B28A800C4EEB2 /* OnlineStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B02C1B28A800C4EEB2 /* OnlineStatusIndicator.swift */; };
+		FA34F0C52C1B28A800C4EEB2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B12C1B28A800C4EEB2 /* SearchBarView.swift */; };
+		FA34F0C62C1B28A800C4EEB2 /* StoryBorderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B22C1B28A800C4EEB2 /* StoryBorderOverlay.swift */; };
+		FA34F0C72C1B28A800C4EEB2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B42C1B28A800C4EEB2 /* CustomNavBar.swift */; };
+		FA34F0C82C1B28A800C4EEB2 /* HideKeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B52C1B28A800C4EEB2 /* HideKeyboardModifier.swift */; };
+		FA34F0C92C1B28A800C4EEB2 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B62C1B28A800C4EEB2 /* Styles.swift */; };
+		FA34F0CA2C1B28A800C4EEB2 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B82C1B28A800C4EEB2 /* ContactModel.swift */; };
+		FA34F0CB2C1B28A800C4EEB2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */; };
+		FA34F0CC2C1B28A800C4EEB2 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +39,20 @@
 		FA0C35532C11F1A1005C4482 /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
 		FA0C35552C11F1E4005C4482 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		FA0C35582C11F235005C4482 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		FA34F0AB2C1B28A800C4EEB2 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		FA34F0AC2C1B28A800C4EEB2 /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		FA34F0AD2C1B28A800C4EEB2 /* ContactRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactRowView.swift; sourceTree = "<group>"; };
+		FA34F0AE2C1B28A800C4EEB2 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		FA34F0AF2C1B28A800C4EEB2 /* InitialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
+		FA34F0B02C1B28A800C4EEB2 /* OnlineStatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineStatusIndicator.swift; sourceTree = "<group>"; };
+		FA34F0B12C1B28A800C4EEB2 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		FA34F0B22C1B28A800C4EEB2 /* StoryBorderOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBorderOverlay.swift; sourceTree = "<group>"; };
+		FA34F0B42C1B28A800C4EEB2 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		FA34F0B52C1B28A800C4EEB2 /* HideKeyboardModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardModifier.swift; sourceTree = "<group>"; };
+		FA34F0B62C1B28A800C4EEB2 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		FA34F0B82C1B28A800C4EEB2 /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
+		FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +85,7 @@
 		FA0C35432C11DA0F005C4482 /* WbApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA34F0BE2C1B28A800C4EEB2 /* WB_App_second_HW */,
 				FA0C35522C11F187005C4482 /* Walkthrough */,
 				FA0C35442C11DA0F005C4482 /* WbAppApp.swift */,
 				FA0C35462C11DA0F005C4482 /* ContentView.swift */,
@@ -82,6 +111,67 @@
 				FA0C35582C11F235005C4482 /* ButtonView.swift */,
 			);
 			path = Walkthrough;
+			sourceTree = "<group>";
+		};
+		FA34F0B32C1B28A800C4EEB2 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				FA34F0AB2C1B28A800C4EEB2 /* AvatarView.swift */,
+				FA34F0AC2C1B28A800C4EEB2 /* ContactListView.swift */,
+				FA34F0AD2C1B28A800C4EEB2 /* ContactRowView.swift */,
+				FA34F0AE2C1B28A800C4EEB2 /* ContactsView.swift */,
+				FA34F0AF2C1B28A800C4EEB2 /* InitialsView.swift */,
+				FA34F0B02C1B28A800C4EEB2 /* OnlineStatusIndicator.swift */,
+				FA34F0B12C1B28A800C4EEB2 /* SearchBarView.swift */,
+				FA34F0B22C1B28A800C4EEB2 /* StoryBorderOverlay.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		FA34F0B72C1B28A800C4EEB2 /* ExtensionElements */ = {
+			isa = PBXGroup;
+			children = (
+				FA34F0B42C1B28A800C4EEB2 /* CustomNavBar.swift */,
+				FA34F0B52C1B28A800C4EEB2 /* HideKeyboardModifier.swift */,
+				FA34F0B62C1B28A800C4EEB2 /* Styles.swift */,
+			);
+			path = ExtensionElements;
+			sourceTree = "<group>";
+		};
+		FA34F0B92C1B28A800C4EEB2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA34F0B82C1B28A800C4EEB2 /* ContactModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FA34F0BB2C1B28A800C4EEB2 /* ProfileAccount */ = {
+			isa = PBXGroup;
+			children = (
+				FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */,
+			);
+			path = ProfileAccount;
+			sourceTree = "<group>";
+		};
+		FA34F0BD2C1B28A800C4EEB2 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		FA34F0BE2C1B28A800C4EEB2 /* WB_App_second_HW */ = {
+			isa = PBXGroup;
+			children = (
+				FA34F0B32C1B28A800C4EEB2 /* Contacts */,
+				FA34F0B72C1B28A800C4EEB2 /* ExtensionElements */,
+				FA34F0B92C1B28A800C4EEB2 /* Models */,
+				FA34F0BB2C1B28A800C4EEB2 /* ProfileAccount */,
+				FA34F0BD2C1B28A800C4EEB2 /* TabBar */,
+			);
+			path = WB_App_second_HW;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,9 +245,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0C35472C11DA0F005C4482 /* ContentView.swift in Sources */,
+				FA34F0C32C1B28A800C4EEB2 /* InitialsView.swift in Sources */,
+				FA34F0C02C1B28A800C4EEB2 /* ContactListView.swift in Sources */,
+				FA34F0BF2C1B28A800C4EEB2 /* AvatarView.swift in Sources */,
+				FA34F0C82C1B28A800C4EEB2 /* HideKeyboardModifier.swift in Sources */,
+				FA34F0CA2C1B28A800C4EEB2 /* ContactModel.swift in Sources */,
+				FA34F0CC2C1B28A800C4EEB2 /* TabBarView.swift in Sources */,
+				FA34F0C52C1B28A800C4EEB2 /* SearchBarView.swift in Sources */,
 				FA0C35452C11DA0F005C4482 /* WbAppApp.swift in Sources */,
+				FA34F0C72C1B28A800C4EEB2 /* CustomNavBar.swift in Sources */,
+				FA34F0C42C1B28A800C4EEB2 /* OnlineStatusIndicator.swift in Sources */,
+				FA34F0CB2C1B28A800C4EEB2 /* ProfileView.swift in Sources */,
 				FA0C35592C11F235005C4482 /* ButtonView.swift in Sources */,
 				FA0C35562C11F1E4005C4482 /* SheetView.swift in Sources */,
+				FA34F0C92C1B28A800C4EEB2 /* Styles.swift in Sources */,
+				FA34F0C22C1B28A800C4EEB2 /* ContactsView.swift in Sources */,
+				FA34F0C62C1B28A800C4EEB2 /* StoryBorderOverlay.swift in Sources */,
+				FA34F0C12C1B28A800C4EEB2 /* ContactRowView.swift in Sources */,
 				FA0C35542C11F1A1005C4482 /* WalkthroughView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
