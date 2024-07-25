@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct ButtonView: View {
+public struct ButtonView: View {
     let buttonAction: () -> Void
     let buttonText: String
     
-    var body: some View {
+    public var body: some View {
         Button(action: buttonAction) {
             Text(buttonText)
                 .font(.system(size: ConstantsSize.buttonTextSize, weight: .semibold))

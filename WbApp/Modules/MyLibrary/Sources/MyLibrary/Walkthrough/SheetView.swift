@@ -1,9 +1,9 @@
 import SwiftUI
 
-struct SheetView: View {
+public struct SheetView: View {
     @Binding var isSheetPresented: Bool
     
-    var body: some View {
+    public var body: some View {
         VStack {
             Text(ConstantsName.textModal)
                 .font(.title)

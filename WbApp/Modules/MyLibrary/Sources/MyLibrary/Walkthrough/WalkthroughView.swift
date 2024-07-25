@@ -1,10 +1,14 @@
 import SwiftUI
 
-struct WalkthroughView: View {
+public struct WalkthroughView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var isSheetPresented = false
     
-    var body: some View {
+    public init() {
+        
+    }
+    
+    public var body: some View {
         VStack {
             illustrationImage
                 .padding(.top, ConstantsSize.illustrationTopPadding)
