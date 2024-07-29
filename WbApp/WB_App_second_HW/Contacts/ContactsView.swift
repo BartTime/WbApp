@@ -11,7 +11,8 @@ struct ContactsView: View {
     private var contacts: FetchedResults<Contacts>
     
     let contactManager = ContactManager.shared
-    
+    @StateObject private var imageLoader = ImageLoader()
+
     var filteredContacts: [Contacts] {
         if searchText.isEmpty {
             return Array(contacts)
@@ -32,6 +33,7 @@ struct ContactsView: View {
                     
                     ContactListView(contacts: filteredContacts)
                         .environmentObject(appData)
+                        .environmentObject(imageLoader)
                 }
                 
                 
@@ -65,15 +67,45 @@ struct ContactsView: View {
     }
     
     private func createContactsMock() {
-        contactManager.createContact(name: "Анастасия Иванова", phoneNumber: "+7 999 999-99-99", isOnline: false, hasStory: false, lastSeen: "Last seen yesterday", avatar: "anastasia", initials: nil)
-        contactManager.createContact(name: "Петя", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: "anastasia", initials: nil)
-        contactManager.createContact(name: "Маман", phoneNumber: "+7 999 999-99-99", isOnline: false, hasStory: true, lastSeen: "Last seen 3 hours ago", avatar: "maman", initials: nil)
-        contactManager.createContact(name: "Арбуз Дыня", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: "anastasia", initials: nil)
-        contactManager.createContact(name: "Иван Иванов", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: nil, initials: "ИИ")
-        contactManager.createContact(name: "Лиса Алиса", phoneNumber: "+7 999 999-99-99", isOnline: false, hasStory: true, lastSeen: "Last seen 30 minutes ago", avatar: nil, initials: "ЛА")
-        contactManager.createContact(name: "Арбуз Дыня", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: "anastasia", initials: nil)
-        contactManager.createContact(name: "Иван Иванов", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: nil, initials: "ИИ")
-    }
+           let contactNames = [
+               "Анастасия Иванова",
+               "Петя",
+               "Маман",
+               "Арбуз Дыня",
+               "Иван Иванов",
+               "Лиса Алиса"
+           ]
+
+           Task {
+               for name in contactNames {
+                   if let url = await fetchRandomImageURL() {
+                       contactManager.createContact(
+                           name: name,
+                           phoneNumber: "+7 999 999-99-99",
+                           isOnline: Bool.random(),
+                           hasStory: Bool.random(),
+                           lastSeen: Bool.random() ? "Online" : "Last seen \(Int.random(in: 1...24)) hours ago",
+                           avatar: "anastasia",
+                           initials: nil,
+                           imageUrl: url
+                       )
+                   }
+               }
+           }
+       }
+    
+    private func fetchRandomImageURL() async -> String? {
+            guard let url = URL(string: "https://random.dog/woof.json") else { return nil }
+
+            do {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                let dogImageResponse = try JSONDecoder().decode(DogImageResponse.self, from: data)
+                return dogImageResponse.url
+            } catch {
+                print("Failed to fetch image URL: \(error.localizedDescription)")
+                return nil
+            }
+        }
 }
 
 private struct ConstantsSize {

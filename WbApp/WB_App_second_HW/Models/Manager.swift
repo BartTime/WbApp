@@ -54,7 +54,7 @@ final class ContactManager: ObservableObject {
     }
     
    
-    func createContact(name: String, phoneNumber: String, isOnline: Bool, hasStory: Bool, lastSeen: String, avatar: String?, initials: String?) {
+    func createContact(name: String, phoneNumber: String, isOnline: Bool, hasStory: Bool, lastSeen: String, avatar: String?, initials: String?, imageUrl: String) {
         let newContact = Contacts(context: context)
         newContact.id = UUID()
         newContact.name = name
@@ -64,6 +64,7 @@ final class ContactManager: ObservableObject {
         newContact.lastSeen = lastSeen
         newContact.avatar = avatar
         newContact.initials = initials
+        newContact.imageUrl = imageUrl
         
         saveContextWithMessage("Contact saved successfully.")
     }

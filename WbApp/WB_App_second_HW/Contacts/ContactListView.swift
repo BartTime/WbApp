@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContactListView: View {
     var contacts: [Contacts]
+    @EnvironmentObject var imageLoader: ImageLoader
     
     var body: some View {
         List {
@@ -14,6 +15,7 @@ struct ContactListView: View {
                             EmptyView()
                         }).opacity(0)
                     )
+                    .environmentObject(imageLoader)
             }
         }
         .listStyle(PlainListStyle())

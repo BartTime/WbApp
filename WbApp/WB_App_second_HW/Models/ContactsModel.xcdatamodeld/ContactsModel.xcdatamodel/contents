@@ -4,6 +4,7 @@
         <attribute name="avatar" optional="YES" attributeType="String"/>
         <attribute name="hasStory" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageUrl" optional="YES" attributeType="String"/>
         <attribute name="initials" optional="YES" attributeType="String"/>
         <attribute name="isOnline" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="lastSeen" attributeType="String"/>

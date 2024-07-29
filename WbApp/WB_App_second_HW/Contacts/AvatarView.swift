@@ -2,22 +2,30 @@ import SwiftUI
 
 struct AvatarView: View {
     let contact: Contacts
+    @EnvironmentObject var imageLoader: ImageLoader
     
+    @State private var image: UIImage? = nil
+
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            if let avatar = contact.avatar {
-                Image(avatar)
+            if let image = image {
+                Image(uiImage: image)
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: ConstantsSize.avatarSize, height: ConstantsSize.avatarSize)
                     .clipShape(RoundedRectangle(cornerRadius: ConstantsSize.avatarCornerRadius))
                     .overlay(StoryBorderOverlay(hasStory: contact.hasStory, avatar: contact.avatar))
             } else if let initials = contact.initials {
                 InitialsView(initials: initials, hasStory: contact.hasStory)
             }
-            
+
             if contact.isOnline {
                 OnlineStatusIndicator()
+            }
+        }
+        .onAppear {
+            imageLoader.loadImage(from: contact.imageUrl ?? "") { loadedImage in
+                self.image = loadedImage
             }
         }
     }

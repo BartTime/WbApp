@@ -2,11 +2,13 @@ import SwiftUI
 
 struct ContactRowView: View {
     let contact: Contacts
+    @EnvironmentObject var imageLoader: ImageLoader
     
     var body: some View {
         HStack(alignment: .top) {
             AvatarView(contact: contact)
                 .padding(.trailing, ConstantsSize.avatarTrailingPadding)
+                .environmentObject(imageLoader)
             
             VStack(alignment: .leading) {
                 Text(contact.name ?? "no name")
