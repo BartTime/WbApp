@@ -1,94 +1,84 @@
 import SwiftUI
 
-// MARK: Раскомнетить для базового перехода и удалить метод
-//struct ContactsView: View {
-//    @State private var searchText = ""
-//    @Environment(\.colorScheme) var colorScheme
-//
-//
-//    var filteredContacts: [Contact] {
-//        filterContacts(contacts, by: searchText)
-//    }
-//
-//    var body: some View {
-//        NavigationStack {
-//            ZStack {
-//                VStack(spacing: 0) {
-//                    Spacer().frame(height: ConstantsSize.headerSpacerHeight)
-//
-//                    SearchBarView(searchText: $searchText)
-//
-//                    ContactListView(contacts: filteredContacts)
-//                }
-//                .customNavBar(
-//                    title: "Контакты",
-//                    rightButtonImages: ["plus"],
-//                    rightButtonActions: [{ print("plus tapped") }]
-//                )
-//
-//                .background(Color(ConstantsColor.backgroundColor))
-//            }
-//        }
-//    }
-//
-//    private func filterContacts(_ contacts: [Contact], by searchText: String) -> [Contact] {
-//        if searchText.isEmpty {
-//            return contacts
-//        } else {
-//            return contacts.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-//        }
-//    }
-//}
-
-struct ContactsViewAnimate: View {
+struct ContactsView: View {
     @State private var searchText = ""
-    @Environment(\.colorScheme) var colorScheme
     
-    @State private var selectedContact: Contact?
-    @State private var showDetail = false
+    @EnvironmentObject var appData: AppData
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Contacts.name, ascending: true)],
+        animation: .default)
+    private var contacts: FetchedResults<Contacts>
     
-    var filteredContacts: [Contact] {
-        filterContacts(contacts, by: searchText)
+    let contactManager = ContactManager.shared
+    
+    var filteredContacts: [Contacts] {
+        if searchText.isEmpty {
+            return Array(contacts)
+        } else {
+            return contacts.filter { contact in
+                contact.name?.lowercased().contains(searchText.lowercased()) ?? false
+            }
+        }
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $appData.contactsNavStack) {
             ZStack {
-                if showDetail, let selectedContact = selectedContact {
-                    ProfileView(contact: selectedContact, showDetail: $showDetail)
-                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.5)) .combined(with: .scale(scale: 0.2)))
-                } else {
-                    VStack(spacing: 0, content: {
-                        Spacer().frame(height: ConstantsSize.headerSpacerHeight)
-                        
-                        SearchBarView(searchText: $searchText)
-                        
-                        ContactListView(contacts: filteredContacts, selectedContact: $selectedContact, showDetail: $showDetail)
-                    })
-                    .background(Color(ConstantsColor.backgroundColor))
-                    .customNavBar(
-                        title: "Контакты",
-                        rightButtonImages: [("plus", false)],
-                        rightButtonActions: [{ print("plus tapped") }]
-                    )
+                VStack(spacing: 0) {
+                    Spacer().frame(height: ConstantsSize.headerSpacerHeight)
+                    
+                    SearchBarView(searchText: $searchText)
+                    
+                    ContactListView(contacts: filteredContacts)
+                        .environmentObject(appData)
                 }
+                
+                
+                .background(Color(ConstantsColor.backgroundColor))
             }
-            .animation(.easeInOut, value: showDetail)
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarLeading) {
+                   Text("Контакты")
+                        .modifier(Subheading1())
+                        .foregroundColor(.primary)
+                        .padding(ConstantsSize.paddingSize)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: createContactsMock) {
+                        Image("plus")
+                            .resizable()
+                            .modifier(RightIconsStyleNav())
+                    }
+                }
+            })
+            .navigationDestination(for: Contacts.self) { contact in
+                ProfileView(contact: contact)
+                    .environmentObject(appData)
+            }
         }
-        .hideKeyboardOnTap()
     }
     
-    private func filterContacts(_ contacts: [Contact], by searchText: String) -> [Contact] {
-        if searchText.isEmpty {
-            return contacts
-        } else {
-            return contacts.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-        }
+    private func deleteAllContacts() {
+        contactManager.deleteAllContacts()
+    }
+    
+    private func createContactsMock() {
+        contactManager.createContact(name: "Анастасия Иванова", phoneNumber: "+7 999 999-99-99", isOnline: false, hasStory: false, lastSeen: "Last seen yesterday", avatar: "anastasia", initials: nil)
+        contactManager.createContact(name: "Петя", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: "anastasia", initials: nil)
+        contactManager.createContact(name: "Маман", phoneNumber: "+7 999 999-99-99", isOnline: false, hasStory: true, lastSeen: "Last seen 3 hours ago", avatar: "maman", initials: nil)
+        contactManager.createContact(name: "Арбуз Дыня", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: "anastasia", initials: nil)
+        contactManager.createContact(name: "Иван Иванов", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: nil, initials: "ИИ")
+        contactManager.createContact(name: "Лиса Алиса", phoneNumber: "+7 999 999-99-99", isOnline: false, hasStory: true, lastSeen: "Last seen 30 minutes ago", avatar: nil, initials: "ЛА")
+        contactManager.createContact(name: "Арбуз Дыня", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: "anastasia", initials: nil)
+        contactManager.createContact(name: "Иван Иванов", phoneNumber: "+7 999 999-99-99", isOnline: true, hasStory: false, lastSeen: "Online", avatar: nil, initials: "ИИ")
     }
 }
 
 private struct ConstantsSize {
     static let headerSpacerHeight: CGFloat = 16
+    static let paddingSize: CGFloat = 8
 }
 
 private struct ConstantsColor {
@@ -96,7 +86,5 @@ private struct ConstantsColor {
 }
 
 #Preview {
-    // MARK: Раскомнетить для базового перехода и удалить метод
-//    ContactsView()
-    ContactsViewAnimate()
+    ContactsView()
 }
