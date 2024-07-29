@@ -9,7 +9,7 @@ extension View {
         rightButtonActions: [() -> Void] = []
     ) -> some View {
         self.toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
+            ToolbarItem(placement: .topBarLeading) {
                 HStack {
                     if let leftButtonImage = leftButtonImage, let leftButtonAction = leftButtonAction {
                         Button(action: leftButtonAction) {
@@ -34,7 +34,7 @@ extension View {
                 }
             }
             
-            ToolbarItemGroup(placement: .navigationBarTrailing) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
                 ForEach(Array(rightButtonImages.enumerated()), id: \.offset) { index, image in
                     if index < rightButtonActions.count {
                         Button(action: rightButtonActions[index]) {
@@ -55,40 +55,10 @@ extension View {
     }
 }
 
-private struct NavigationIconStyleNav: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .aspectRatio(contentMode: .fit)
-            .frame(width: NavigationIconStyle.width, height: NavigationIconStyle.height)
-            .foregroundColor(NavigationIconStyle.foregroundColor)
-    }
-}
-
-private struct RightIconsStyleNav: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .aspectRatio(contentMode: .fit)
-            .frame(width: RightIconsStyle.width, height: RightIconsStyle.height)
-            .foregroundColor(RightIconsStyle.foregroundColor)
-    }
-}
-
-
 private struct ConstantsSize {
     static let horizontalPadding: CGFloat = 8
 }
 
-private struct NavigationIconStyle {
-    static let width: CGFloat = 8
-    static let height: CGFloat = 12
-    static let foregroundColor: Color = .primary
-}
-
-private struct RightIconsStyle {
-    static let width: CGFloat = 24
-    static let height: CGFloat = 24
-    static let foregroundColor: Color = .primary
-}
 
 struct CustomNavBarTest: View {
     var body: some View {
@@ -111,7 +81,7 @@ struct CustomNavBarTest: View {
             .customNavBar(
                 title: "Main Screen",
                 leftButtonImage: nil,
-                rightButtonImages: [("bell", true)], // Использование системного изображения
+                rightButtonImages: [("bell", true)],
                 rightButtonActions: [
                     { print("Bell tapped") }
                 ]

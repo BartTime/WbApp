@@ -1,11 +1,7 @@
 import SwiftUI
 
-enum Tab {
-    case contacts, chats, more
-}
-
 struct TabView: View {
-    @Binding var tabIdx: Tab
+    @Binding var tabIdx: Tabs
     
     var body: some View {
         VStack(spacing: TabBarConstants.Layout.tabSpacing) {
@@ -24,37 +20,11 @@ struct TabView: View {
         .background(TabBarConstants.Colors.backgroundColor)
     }
     
-    // MARK: TabBar с кружком внизу
-//    private func tabButton(systemName: String, text: String, tab: Tab) -> some View {
-//        Button(action: {
-//            self.tabIdx = tab
-//        }) {
-//            VStack(spacing: TabBarConstants.Layout.tabSpacing) {
-//                if self.tabIdx == tab {
-//                    Text(text)
-//                        .font(.system(size: TabBarConstants.Sizes.tabButtonTextSize, weight: .regular))
-//                } else {
-//                    Image(systemName: systemName)
-//                        .font(.system(size: TabBarConstants.Sizes.tabButtonIconSize))
-//                }
-//
-//                if self.tabIdx == tab {
-//                    Circle()
-//                        .frame(width: TabBarConstants.Sizes.tabButtonCircleSize, height: TabBarConstants.Sizes.tabButtonCircleSize)
-//                        .padding(.top, TabBarConstants.Layout.tabButtonCirclePaddingTop)
-//                }
-//            }
-//            .frame(width: TabBarConstants.Layout.tabButtonWidth, height: TabBarConstants.Layout.tabButtonHeight)
-//        }
-//        .foregroundColor(TabBarConstants.Colors.buttonColor)
-//    }
-    
-    private func tabButton(systemName: String, text: String, tab: Tab) -> some View {
+    private func tabButton(systemName: String, text: String, tab: Tabs) -> some View {
         Button(action: {
             self.tabIdx = tab
         }) {
             VStack(spacing: TabBarConstants.Layout.tabSpacing) {
-                
                 Image(systemName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -69,23 +39,21 @@ struct TabView: View {
 }
 
 struct TabBarView: View {
-    @State var tabIdx: Tab = .contacts
+    @EnvironmentObject private var appData: AppData
     
     var body: some View {
         VStack(spacing: TabBarConstants.Layout.tabSpacing) {
             Spacer()
-            switch tabIdx {
+            switch appData.activeTab {
             case .contacts:
-                // MARK: Раскомнетить для базового перехода и удалить метод
-//                ContactsView()
-                ContactsViewAnimate()
+                ContactsView()
             case .chats:
                 Text("Чаты")
             case .more:
                 Text("Еще")
             }
             Spacer(minLength: 0)
-            TabView(tabIdx: $tabIdx)
+            TabView(tabIdx: $appData.activeTab)
                 .shadow(radius: TabBarConstants.Layout.shadowRadius)
             
         }
