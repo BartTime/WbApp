@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Fruityvice API
+  version: 1.0.0
+servers:
+  - url: https://www.fruityvice.com/api
+paths:
+  /fruit/all:
+    get:
+      summary: Get all fruits
+      operationId: getAllFruits
+      responses:
+        '200':
+          description: A list of fruits
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Fruit'
+        default:
+          description: Unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Fruit:
+      type: object
+      required:
+        - name
+        - id
+        - family
+        - order
+        - genus
+        - nutritions
+      properties:
+        name:
+          type: string
+        id:
+          type: integer
+        family:
+          type: string
+        order:
+          type: string
+        genus:
+          type: string
+        nutritions:
+          type: object
+          required:
+            - calories
+            - fat
+            - sugar
+            - carbohydrates
+            - protein
+          properties:
+            calories:
+              type: number
+            fat:
+              type: number
+            sugar:
+              type: number
+            carbohydrates:
+              type: number
+            protein:
+              type: number
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+
