@@ -20,13 +20,17 @@
 		FA34F0C22C1B28A800C4EEB2 /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AE2C1B28A800C4EEB2 /* ContactsView.swift */; };
 		FA34F0C32C1B28A800C4EEB2 /* InitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0AF2C1B28A800C4EEB2 /* InitialsView.swift */; };
 		FA34F0C42C1B28A800C4EEB2 /* OnlineStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B02C1B28A800C4EEB2 /* OnlineStatusIndicator.swift */; };
-		FA34F0C52C1B28A800C4EEB2 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B12C1B28A800C4EEB2 /* SearchBarView.swift */; };
+		FA34F0C52C1B28A800C4EEB2 /* TextFieldInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B12C1B28A800C4EEB2 /* TextFieldInput.swift */; };
 		FA34F0C62C1B28A800C4EEB2 /* StoryBorderOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B22C1B28A800C4EEB2 /* StoryBorderOverlay.swift */; };
 		FA34F0C72C1B28A800C4EEB2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B42C1B28A800C4EEB2 /* CustomNavBar.swift */; };
 		FA34F0C82C1B28A800C4EEB2 /* HideKeyboardModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B52C1B28A800C4EEB2 /* HideKeyboardModifier.swift */; };
 		FA34F0C92C1B28A800C4EEB2 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B62C1B28A800C4EEB2 /* Styles.swift */; };
 		FA34F0CB2C1B28A800C4EEB2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */; };
 		FA34F0CC2C1B28A800C4EEB2 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */; };
+		FAD1A7FD2C5BC3E600B907E4 /* WbChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1A7FC2C5BC3E600B907E4 /* WbChatView.swift */; };
+		FAD1A7FF2C5BC4F300B907E4 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FAD1A7FE2C5BC4F300B907E4 /* ExyteChat */; };
+		FAD1A8012C5CDA2300B907E4 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1A8002C5CDA2300B907E4 /* MessageView.swift */; };
+		FAD1A8032C5CF08C00B907E4 /* FormatDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1A8022C5CF08C00B907E4 /* FormatDate.swift */; };
 		FAFE498C2C21E3C800ED36D0 /* ContactsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAFE498A2C21E3C800ED36D0 /* ContactsModel.xcdatamodeld */; };
 		FAFE498F2C21E51A00ED36D0 /* Contacts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE498D2C21E51A00ED36D0 /* Contacts+CoreDataClass.swift */; };
 		FAFE49902C21E51A00ED36D0 /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE498E2C21E51A00ED36D0 /* Contacts+CoreDataProperties.swift */; };
@@ -89,13 +93,16 @@
 		FA34F0AE2C1B28A800C4EEB2 /* ContactsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		FA34F0AF2C1B28A800C4EEB2 /* InitialsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialsView.swift; sourceTree = "<group>"; };
 		FA34F0B02C1B28A800C4EEB2 /* OnlineStatusIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineStatusIndicator.swift; sourceTree = "<group>"; };
-		FA34F0B12C1B28A800C4EEB2 /* SearchBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		FA34F0B12C1B28A800C4EEB2 /* TextFieldInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldInput.swift; sourceTree = "<group>"; };
 		FA34F0B22C1B28A800C4EEB2 /* StoryBorderOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBorderOverlay.swift; sourceTree = "<group>"; };
 		FA34F0B42C1B28A800C4EEB2 /* CustomNavBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		FA34F0B52C1B28A800C4EEB2 /* HideKeyboardModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideKeyboardModifier.swift; sourceTree = "<group>"; };
 		FA34F0B62C1B28A800C4EEB2 /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		FAD1A7FC2C5BC3E600B907E4 /* WbChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WbChatView.swift; sourceTree = "<group>"; };
+		FAD1A8002C5CDA2300B907E4 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		FAD1A8022C5CF08C00B907E4 /* FormatDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatDate.swift; sourceTree = "<group>"; };
 		FAFE498B2C21E3C800ED36D0 /* ContactsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactsModel.xcdatamodel; sourceTree = "<group>"; };
 		FAFE498D2C21E51A00ED36D0 /* Contacts+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataClass.swift"; sourceTree = "<group>"; };
 		FAFE498E2C21E51A00ED36D0 /* Contacts+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD1A7FF2C5BC4F300B907E4 /* ExyteChat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +166,7 @@
 		FA0C35432C11DA0F005C4482 /* WbApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1A7FB2C5BC12D00B907E4 /* WB_App_17_HW */,
 				FAFE49D82C23134E00ED36D0 /* Intents */,
 				FAFE49BE2C21EE8600ED36D0 /* Info.plist */,
 				FAFE49AF2C21E7C800ED36D0 /* WbApp.entitlements */,
@@ -198,7 +207,7 @@
 				FA34F0AE2C1B28A800C4EEB2 /* ContactsView.swift */,
 				FA34F0AF2C1B28A800C4EEB2 /* InitialsView.swift */,
 				FA34F0B02C1B28A800C4EEB2 /* OnlineStatusIndicator.swift */,
-				FA34F0B12C1B28A800C4EEB2 /* SearchBarView.swift */,
+				FA34F0B12C1B28A800C4EEB2 /* TextFieldInput.swift */,
 				FA34F0B22C1B28A800C4EEB2 /* StoryBorderOverlay.swift */,
 			);
 			path = Contacts;
@@ -255,6 +264,16 @@
 			path = WB_App_second_HW;
 			sourceTree = "<group>";
 		};
+		FAD1A7FB2C5BC12D00B907E4 /* WB_App_17_HW */ = {
+			isa = PBXGroup;
+			children = (
+				FAD1A7FC2C5BC3E600B907E4 /* WbChatView.swift */,
+				FAD1A8002C5CDA2300B907E4 /* MessageView.swift */,
+				FAD1A8022C5CF08C00B907E4 /* FormatDate.swift */,
+			);
+			path = WB_App_17_HW;
+			sourceTree = "<group>";
+		};
 		FAFE49982C21E78E00ED36D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +320,9 @@
 				FAFE49A82C21E78F00ED36D0 /* PBXTargetDependency */,
 			);
 			name = WbApp;
+			packageProductDependencies = (
+				FAD1A7FE2C5BC4F300B907E4 /* ExyteChat */,
+			);
 			productName = WbApp;
 			productReference = FA0C35412C11DA0F005C4482 /* WbApp.app */;
 			productType = "com.apple.product-type.application";
@@ -349,6 +371,9 @@
 				Base,
 			);
 			mainGroup = FA0C35382C11DA0F005C4482;
+			packageReferences = (
+				FAD1A7FA2C5BC10900B907E4 /* XCRemoteSwiftPackageReference "Chat" */,
+			);
 			productRefGroup = FA0C35422C11DA0F005C4482 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -391,12 +416,15 @@
 				FAFE49B52C21E89E00ED36D0 /* Tab.swift in Sources */,
 				FAFE49BC2C21E9CC00ED36D0 /* AppData.swift in Sources */,
 				FA34F0C02C1B28A800C4EEB2 /* ContactListView.swift in Sources */,
+				FAD1A8032C5CF08C00B907E4 /* FormatDate.swift in Sources */,
 				FAFE49BF2C22F23B00ED36D0 /* ContactsWidget.swift in Sources */,
 				FA34F0BF2C1B28A800C4EEB2 /* AvatarView.swift in Sources */,
 				FAFE49DF2C231A4D00ED36D0 /* OpenTabBarIntent.swift in Sources */,
+				FAD1A7FD2C5BC3E600B907E4 /* WbChatView.swift in Sources */,
 				FA34F0C82C1B28A800C4EEB2 /* HideKeyboardModifier.swift in Sources */,
 				FA34F0CC2C1B28A800C4EEB2 /* TabBarView.swift in Sources */,
-				FA34F0C52C1B28A800C4EEB2 /* SearchBarView.swift in Sources */,
+				FAD1A8012C5CDA2300B907E4 /* MessageView.swift in Sources */,
+				FA34F0C52C1B28A800C4EEB2 /* TextFieldInput.swift in Sources */,
 				FA0C35452C11DA0F005C4482 /* WbAppApp.swift in Sources */,
 				FA34F0C72C1B28A800C4EEB2 /* CustomNavBar.swift in Sources */,
 				FAFE498F2C21E51A00ED36D0 /* Contacts+CoreDataClass.swift in Sources */,
@@ -712,6 +740,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FAD1A7FA2C5BC10900B907E4 /* XCRemoteSwiftPackageReference "Chat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Chat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FAD1A7FE2C5BC4F300B907E4 /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAD1A7FA2C5BC10900B907E4 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		FAFE498A2C21E3C800ED36D0 /* ContactsModel.xcdatamodeld */ = {

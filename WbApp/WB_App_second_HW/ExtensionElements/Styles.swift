@@ -104,9 +104,29 @@ struct RightIconsStyleNav: ViewModifier {
     }
 }
 
+struct ButtonImageStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .aspectRatio(contentMode: .fit)
+            .frame(width: IconsStyle.width, height: IconsStyle.height)
+            .foregroundColor(Color(ConstantsColor.lastSeenTextColor))
+    }
+}
+
+struct ButtonImageStylePurple: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .aspectRatio(contentMode: .fit)
+            .frame(width: IconsStyle.widthExt, height: IconsStyle.heightExt)
+            .foregroundColor(Color(ConstantsColor.buttonBackground))
+    }
+}
+
 private struct IconsStyle {
     static let width: CGFloat = 24
     static let height: CGFloat = 24
+    static let widthExt: CGFloat = 18
+    static let heightExt: CGFloat = 18
     static let foregroundColor: Color = .primary
 }
 
@@ -116,6 +136,7 @@ private struct ConstantsColor {
     
     static let searchTextFieldTextColor = "grayColor"
     static let lastSeenTextColor = "grayColor"
+    static let buttonBackground = "buttonBackgroundColor"
 }
 
 private struct ConstantsFont {

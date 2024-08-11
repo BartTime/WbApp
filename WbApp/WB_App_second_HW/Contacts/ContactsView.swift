@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ContactsView: View {
     @State private var searchText = ""
+    @Binding var isTabBarHidden: Bool
     
     @EnvironmentObject var appData: AppData
     @Environment(\.managedObjectContext) private var viewContext
@@ -28,7 +29,8 @@ struct ContactsView: View {
                 VStack(spacing: 0) {
                     Spacer().frame(height: ConstantsSize.headerSpacerHeight)
                     
-                    SearchBarView(searchText: $searchText)
+                    TextFieldInput(searchText: $searchText, showGlass: true, defaultText: "Search")
+                        .padding(.horizontal, ConstantsSize.horizontalPadding)
                     
                     ContactListView(contacts: filteredContacts)
                         .environmentObject(appData)
@@ -54,8 +56,13 @@ struct ContactsView: View {
                 }
             })
             .navigationDestination(for: Contacts.self) { contact in
-                ProfileView(contact: contact)
+//                ProfileView(contact: contact)
+//                    .environmentObject(appData)
+                WbChatView(contact: contact)
                     .environmentObject(appData)
+                    .onAppear {
+                        isTabBarHidden.toggle()
+                    }
             }
         }
     }
@@ -79,6 +86,7 @@ struct ContactsView: View {
 private struct ConstantsSize {
     static let headerSpacerHeight: CGFloat = 16
     static let paddingSize: CGFloat = 8
+    static let horizontalPadding: CGFloat = 24
 }
 
 private struct ConstantsColor {
@@ -86,5 +94,5 @@ private struct ConstantsColor {
 }
 
 #Preview {
-    ContactsView()
+    ContactsView(isTabBarHidden: .constant(false))
 }

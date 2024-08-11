@@ -2,22 +2,25 @@ import SwiftUI
 
 struct TabView: View {
     @Binding var tabIdx: Tabs
+    @Binding var isTabBarHidden: Bool
     
     var body: some View {
-        VStack(spacing: TabBarConstants.Layout.tabSpacing) {
-            HStack(spacing: TabBarConstants.Layout.tabSpacing) {
-                tabButton(systemName: "group", text: "Контакты", tab: .contacts)
+        if !isTabBarHidden {
+            VStack(spacing: TabBarConstants.Layout.tabSpacing) {
+                HStack(spacing: TabBarConstants.Layout.tabSpacing) {
+                    tabButton(systemName: "group", text: "Контакты", tab: .contacts)
+                    Spacer()
+                    tabButton(systemName: "message_circle", text: "Чаты", tab: .chats)
+                    Spacer()
+                    tabButton(systemName: "coolicon", text: "Еще", tab: .more)
+                }
                 Spacer()
-                tabButton(systemName: "message_circle", text: "Чаты", tab: .chats)
-                Spacer()
-                tabButton(systemName: "coolicon", text: "Еще", tab: .more)
             }
-            Spacer()
+            .padding(.top, TabBarConstants.Layout.tabPaddingTop)
+            .frame(height: TabBarConstants.Layout.tabHeight)
+            .padding(.horizontal, TabBarConstants.Layout.tabPaddingHorizontal)
+            .background(TabBarConstants.Colors.backgroundColor)
         }
-        .padding(.top, TabBarConstants.Layout.tabPaddingTop)
-        .frame(height: TabBarConstants.Layout.tabHeight)
-        .padding(.horizontal, TabBarConstants.Layout.tabPaddingHorizontal)
-        .background(TabBarConstants.Colors.backgroundColor)
     }
     
     private func tabButton(systemName: String, text: String, tab: Tabs) -> some View {
@@ -40,20 +43,21 @@ struct TabView: View {
 
 struct TabBarView: View {
     @EnvironmentObject private var appData: AppData
+    @State private var isTabBarHidden: Bool = false
     
     var body: some View {
         VStack(spacing: TabBarConstants.Layout.tabSpacing) {
             Spacer()
             switch appData.activeTab {
             case .contacts:
-                ContactsView()
+                ContactsView(isTabBarHidden: $isTabBarHidden)
             case .chats:
                 Text("Чаты")
             case .more:
                 Text("Еще")
             }
             Spacer(minLength: 0)
-            TabView(tabIdx: $appData.activeTab)
+            TabView(tabIdx: $appData.activeTab, isTabBarHidden: $isTabBarHidden)
                 .shadow(radius: TabBarConstants.Layout.shadowRadius)
             
         }
