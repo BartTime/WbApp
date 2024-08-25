@@ -1,98 +1,65 @@
 import SwiftUI
 
-// MARK: Раскомнетить для базового перехода и удалить метод
-
-//struct ProfileView: View {
-//    @Environment(\.dismiss) private var dismiss
-//    var contact: Contact
-//
-//    var body: some View {
-//        NavigationStack {
-//            ZStack {
-//                Color(Constants.Colors.backgroundColor)
-//                    .ignoresSafeArea()
-//
-//                VStack(spacing: 0) {
-//                    Spacer().frame(height: Constants.Layout.spacerHeight)
-//
-//                    ProfileImageView(contact: contact)
-//
-//                    VStack(spacing: Constants.Layout.spacingBetweenTexts) {
-//                        Text(contact.name)
-//                            .padding(.top, Constants.Layout.topPadding)
-//                            .modifier(TitleStyleContacts())
-//
-//                        Text(contact.phoneNumber)
-//                            .font(.system(size: Constants.FontSizes.phoneNumber, weight: .semibold))
-//                            .foregroundColor(.gray)
-//                    }
-//
-//                    SocialMediaButtons()
-//                        .padding(.top, Constants.Layout.socialMediaTopPadding)
-//
-//                    Spacer()
-//                }
-//                .navigationBarBackButtonHidden(true)
-//            }
-//            .customNavBar(
-//                title: Constants.Titles.contactTitle,
-//                leftButtonImage: Constants.Icons.leftChevron) {
-//                    dismiss()
-//                }
-//
-//        }
-//    }
-//}
-
 struct ProfileView: View {
-    var contact: Contact
-    @Binding var showDetail: Bool
-    
+    @EnvironmentObject var appData: AppData
+    var contact: Contacts
+
     var body: some View {
-        NavigationStack {
             ZStack {
                 Color(Constants.Colors.backgroundColor)
                     .ignoresSafeArea()
-                
+
                 VStack(spacing: 0) {
                     Spacer().frame(height: Constants.Layout.spacerHeight)
-                    
+
                     ProfileImageView(contact: contact)
-                    
+
                     VStack(spacing: Constants.Layout.spacingBetweenTexts) {
-                        Text(contact.name)
+                        Text(contact.name ?? "no name")
                             .padding(.top, Constants.Layout.topPadding)
                             .modifier(TitleStyleContacts())
-                        
-                        Text(contact.phoneNumber)
+
+                        Text(contact.phoneNumber ?? "no telephone")
                             .font(.system(size: Constants.FontSizes.phoneNumber, weight: .semibold))
                             .foregroundColor(.gray)
                     }
-                    
+
                     SocialMediaButtons()
                         .padding(.top, Constants.Layout.socialMediaTopPadding)
-                    
+
                     Spacer()
                 }
-                .navigationBarBackButtonHidden(true)
             }
-            .customNavBar(
-                title: Constants.Titles.contactTitle,
-                leftButtonImage: ("chevron", false),
-                rightButtonImages: [("edit", false)],
-                leftButtonAction: {
-                    showDetail.toggle()
-                }, rightButtonActions: [
-                    { print("edit tapped") }
-                ]
-            )
-                .navigationBarHidden(showDetail ? false : true)
-        }
+            .navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button {
+                            appData.removeContactFromNavStack(contact: contact)
+                        } label: {
+                            HStack {
+                                Image("chevron")
+                                    .resizable()
+                                    .modifier(NavigationIconStyleNav())
+                                    .padding(.leading, Constants.Layout.iconPadding)
+                                Text("Контакты")
+                                    .modifier(Subheading1())
+                                    .foregroundColor(.primary)
+                            }
+                        }
+                    
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    Image("edit")
+                        .resizable()
+                        .modifier(RightIconsStyleNav())
+                }
+            }
     }
 }
 
 private struct ProfileImageView: View {
-    var contact: Contact
+    var contact: Contacts
     
     var body: some View {
         ZStack {
@@ -176,6 +143,7 @@ private struct Constants {
         static let buttonHeight: CGFloat = 40
         static let buttonCornerRadius: CGFloat = 25
         static let buttonBorderWidth: CGFloat = 1.67
+        static let iconPadding: CGFloat = 8
     }
     
     struct Colors {
