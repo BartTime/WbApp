@@ -55,7 +55,7 @@ extension View {
     }
 }
 
-private struct NavigationIconStyleNav: ViewModifier {
+struct NavigationIconStyleNav: ViewModifier {
     func body(content: Content) -> some View {
         content
             .aspectRatio(contentMode: .fit)
