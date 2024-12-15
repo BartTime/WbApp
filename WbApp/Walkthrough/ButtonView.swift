@@ -3,6 +3,7 @@ import SwiftUI
 struct ButtonView: View {
     let buttonAction: () -> Void
     let buttonText: String
+    var isDisabled: Bool
     
     var body: some View {
         Button(action: buttonAction) {
@@ -10,9 +11,11 @@ struct ButtonView: View {
                 .font(.system(size: ConstantsSize.buttonTextSize, weight: .semibold))
                 .frame(width: ConstantsSize.buttonWidth, height: ConstantsSize.buttonHeight)
                 .background(Color(ConstantsColor.buttonBackgroundColor))
+                .opacity(isDisabled ? 0.5 : 1.0)
                 .foregroundColor(.white)
                 .cornerRadius(ConstantsSize.buttonCornerRadius)
         }
+        .disabled(isDisabled)
     }
 }
 
@@ -26,5 +29,6 @@ private struct ConstantsSize {
 
 private struct ConstantsColor {
     static let buttonBackgroundColor = "buttonBackgroundColor"
+    static let disabledColor = "disabledButtonColor"
 }
 
