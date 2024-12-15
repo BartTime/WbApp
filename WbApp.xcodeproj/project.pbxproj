@@ -28,6 +28,8 @@
 		FA34F0CA2C1B28A800C4EEB2 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0B82C1B28A800C4EEB2 /* ContactModel.swift */; };
 		FA34F0CB2C1B28A800C4EEB2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */; };
 		FA34F0CC2C1B28A800C4EEB2 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */; };
+		FAC2AD122C2AF4AE00CD9676 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC2AD112C2AF4AE00CD9676 /* CalendarView.swift */; };
+		FAE3AB712C2B2CAB004810DC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FAE3AB702C2B2CAA004810DC /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		FA34F0B82C1B28A800C4EEB2 /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 		FA34F0BA2C1B28A800C4EEB2 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FA34F0BC2C1B28A800C4EEB2 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		FAC2AD112C2AF4AE00CD9676 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		FAE3AB702C2B2CAA004810DC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		FA0C35432C11DA0F005C4482 /* WbApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAC2AD102C2AF46400CD9676 /* Wb_App_six_HW */,
 				FA34F0BE2C1B28A800C4EEB2 /* WB_App_second_HW */,
 				FA0C35522C11F187005C4482 /* Walkthrough */,
 				FA0C35442C11DA0F005C4482 /* WbAppApp.swift */,
@@ -174,6 +179,15 @@
 			path = WB_App_second_HW;
 			sourceTree = "<group>";
 		};
+		FAC2AD102C2AF46400CD9676 /* Wb_App_six_HW */ = {
+			isa = PBXGroup;
+			children = (
+				FAC2AD112C2AF4AE00CD9676 /* CalendarView.swift */,
+				FAE3AB702C2B2CAA004810DC /* Localizable.xcstrings */,
+			);
+			path = Wb_App_six_HW;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,11 +225,15 @@
 			};
 			buildConfigurationList = FA0C353C2C11DA0F005C4482 /* Build configuration list for PBXProject "WbApp" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = ru;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
+				fr,
+				"zh-Hans",
+				de,
 			);
 			mainGroup = FA0C35382C11DA0F005C4482;
 			productRefGroup = FA0C35422C11DA0F005C4482 /* Products */;
@@ -234,6 +252,7 @@
 			files = (
 				FA0C354C2C11DA10005C4482 /* Preview Assets.xcassets in Resources */,
 				FA0C35492C11DA10005C4482 /* Assets.xcassets in Resources */,
+				FAE3AB712C2B2CAB004810DC /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +273,7 @@
 				FA34F0C52C1B28A800C4EEB2 /* SearchBarView.swift in Sources */,
 				FA0C35452C11DA0F005C4482 /* WbAppApp.swift in Sources */,
 				FA34F0C72C1B28A800C4EEB2 /* CustomNavBar.swift in Sources */,
+				FAC2AD122C2AF4AE00CD9676 /* CalendarView.swift in Sources */,
 				FA34F0C42C1B28A800C4EEB2 /* OnlineStatusIndicator.swift in Sources */,
 				FA34F0CB2C1B28A800C4EEB2 /* ProfileView.swift in Sources */,
 				FA0C35592C11F235005C4482 /* ButtonView.swift in Sources */,
@@ -328,6 +348,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -384,6 +405,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
